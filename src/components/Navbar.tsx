@@ -1,4 +1,5 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
+import ButtonComp from './Button.tsx'
 
 const Navbar = () => {
     return (
@@ -8,10 +9,13 @@ const Navbar = () => {
 
                 </div>
                 <div className="nav-links-wrapper">
-                    
+                    <NavLink to="">Home</NavLink>
+                    <NavLink to="">About</NavLink>
+                    <NavLink to="">Convert</NavLink>
+                    <NavLink to="">Faq</NavLink>
                 </div>
                 <div className="nav-btns">
-
+                    <ButtonComp title="SignUp" />
                 </div>
             </div>
         </div>
