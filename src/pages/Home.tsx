@@ -10,13 +10,13 @@ const Home = () => {
   };
 
   return (
-    <div className="convert-container border-2 min-h-2/3">
-      <div className="col-container border-2 p-2.5 flex flex-col justify-center items-center gap-3.5">
-        <div className="main-heading-wrapper border-2 w-1/3 border-purple-400">
-          <h3 className="text-center text-4xl ">Convert,Edit & Share Documents in Seconds</h3>
+    <div className="convert-container border-2 h-96 min-h-96">
+      <div className="col-container h-full p-4 flex flex-col justify-center items-center gap-3.5">
+        <div className="main-heading-wrapper w-2xs lg:w-1/2">
+          <h3 className="text-center text-2xl md:text:4xl lg:text-4xl uppercase">Convert,Edit & Share Documents in Seconds</h3>
         </div>
-        <div className="short-desc border-2 border-amber-300 mt-1">
-          <p className="text-center">Upload files, convert formats, and collaborate</p>
+        <div className="short-desc mt-0.5">
+          <p className="text-center text-base lg:text-xl">Upload files, convert formats, and collaborate</p>
         </div>
         <div className="file-upload-container w-2/12 flex justify-center gap-x-2.5">
 
@@ -43,7 +43,8 @@ const Home = () => {
           </Upload>
           <Select
             placeholder="Select conversion type"
-            style={{ width: 250 }}
+            className="w-[140px] lg:w-[200px]"
+            // style={{ width: 200 }}
             onChange={handleChange}
           >
             <OptGroup label="🖼️ Image Conversions">
