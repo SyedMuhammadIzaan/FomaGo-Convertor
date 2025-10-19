@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Select, Upload, type UploadFile, message } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 
 const { Option, OptGroup } = Select;
 
@@ -8,7 +8,6 @@ const Home = () => {
   // Step 1: Store uploaded files
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<UploadFile[]>([]);
-
   const handleChange = (value: string) => {
     console.log(`Selected conversion type: ${value}`);
   };
@@ -27,7 +26,11 @@ const Home = () => {
     setConvertedFiles(fileList);
     message.success("File ready for conversion!");
   };
+  const handleDelete = (uid: number) => {
+    const newFileList = fileList.filter((_, index) => index !== uid);
+    setFileList(newFileList);
 
+  }
   return (
     <div className="convert-container border-2 h-96 min-h-96">
       <div className="col-container h-full p-4 flex flex-col justify-center items-center gap-3.5">
@@ -47,6 +50,7 @@ const Home = () => {
           <Upload
             action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
             listType="picture"
+            showUploadList={false}
             fileList={fileList}
             onChange={handleUploadChange}
           >
@@ -81,7 +85,26 @@ const Home = () => {
             Convert
           </Button>
         </div>
-
+        <div>
+          {
+            fileList.length > 0 ? (
+              <ul>
+                {
+                  fileList.map((file, index) => (
+                    <span className="flex justify-between border-2 border-orange-300 w-52 p-2 mb-0.5">
+                      <li key={index}>{file.name}</li>
+                      <li><DeleteOutlined onClick={() => { handleDelete(index) }} /></li>
+                    </span>
+                  ))
+                }
+              </ul>
+            )
+              : (<p className="text-gray-500 text-sm">
+                No files uploaded yet.
+              </p>
+              )
+          }
+        </div>
         {/* Step 4: Show uploaded files after convert */}
         <div className="converted-files mt-3">
           {convertedFiles.length > 0 ? (
