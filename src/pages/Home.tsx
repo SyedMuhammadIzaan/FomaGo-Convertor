@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button, Select, Upload, type UploadFile, message } from "antd";
 import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
-
 const { Option, OptGroup } = Select;
 
 const Home = () => {
