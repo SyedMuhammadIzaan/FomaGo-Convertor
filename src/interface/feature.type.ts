@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
+
 export interface featureType{
-    icon: string;
+    icon: ReactNode | string;
     title: string;
     desc: string;
 }
