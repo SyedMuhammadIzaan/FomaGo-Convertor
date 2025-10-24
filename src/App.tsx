@@ -1,4 +1,5 @@
 import Footer from "./components/Footer"
+import IndustriesWeServe from "./components/layout/industriesWeServe"
 import KeyFeature from "./components/layout/keyfeature"
 import UseOfBackgroundRemover from "./components/layout/useOfbackgroundRemover"
 import Navbar from "./components/Navbar"
@@ -12,6 +13,7 @@ function App() {
       <Home />
       <KeyFeature />
       <UseOfBackgroundRemover />
+      <IndustriesWeServe />
       <Footer />
     </>
   )

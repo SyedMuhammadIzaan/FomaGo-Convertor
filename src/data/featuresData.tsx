@@ -1,9 +1,9 @@
-import type { featureType } from "../interface/feature.type";
+import type { cardType } from "../interface/feature.type";
 import { FaRegEdit } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import { FaExpeditedssl } from "react-icons/fa";
 
-export const featuresData:featureType[] = [
+export const featuresData:cardType[] = [
   {
     icon: <FaRegEdit size={28} />,
     title: "Edit & Annotate", 

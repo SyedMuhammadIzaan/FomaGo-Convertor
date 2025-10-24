@@ -1,4 +1,3 @@
-import React from 'react'
 import BackgroundRemoverImage from '../../assets/Before&AfterConvertImage.png'
 import ButtonComp from '../Button'
 const UseOfBackgroundRemover = () => {
