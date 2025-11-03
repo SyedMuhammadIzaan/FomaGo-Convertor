@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Button, Select, Upload, type UploadFile, message } from "antd";
 import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
+import { convertFile } from "../src/api/convertApi";
 const { Option, OptGroup } = Select;
 
 const Home = () => {
   // Step 1: Store uploaded files
   const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [format, setFormat] = useState<string>("");
   const [convertedFiles, setConvertedFiles] = useState<UploadFile[]>([]);
   const handleChange = (value: string) => {
     console.log(`Selected conversion type: ${value}`);
+    setFormat(value);
   };
 
   // Step 2: Update file list when user uploads files
@@ -23,6 +26,7 @@ const Home = () => {
       return;
     }
     setConvertedFiles(fileList);
+    convertFile(fileList[0].originFileObj as File, format).then((data)=>console.log("data",data));
     message.success("File ready for conversion!");
   };
   const handleDelete = (uid: number) => {
@@ -61,7 +65,7 @@ const Home = () => {
           <Select
             placeholder="Select conversion type"
             className="w-[140px] lg:w-[200px]"
-            onChange={handleChange}
+            onChange={(value) => handleChange(value)}
           >
             <OptGroup label="🖼️ Image Conversions">
               <Option value="png">Convert to PNG</Option>
