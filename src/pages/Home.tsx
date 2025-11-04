@@ -72,6 +72,7 @@ const Home = () => {
               <Option value="jpg">Convert to JPG</Option>
               <Option value="webp">Convert to WEBP</Option>
               <Option value="pdf">Convert to PDF</Option>
+              <Option value="docx">Extract Image Text</Option>
             </OptGroup>
 
             <OptGroup label="📄 Document Conversions">
