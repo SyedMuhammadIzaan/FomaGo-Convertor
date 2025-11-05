@@ -9,7 +9,7 @@ export const convertFile = async (file: File, targetFormat: string) => {
     const response = await axios.post("http://127.0.0.1:8000/convert/", formData, {
       responseType: "blob", // 👈 this is essential
     });
-
+    // console.log("Req Header",response.headers["content-disposition"])
     // 👇 This part handles file download
     const blob = new Blob([response.data], { type: response.data.type });
     const url = window.URL.createObjectURL(blob);
@@ -23,6 +23,7 @@ export const convertFile = async (file: File, targetFormat: string) => {
     if (disposition && disposition.includes("filename=")) {
       filename = disposition.split("filename=")[1].replace(/"/g, "");
     }
+    // console.log("extracted filename", filename);
 
     a.download = filename; // e.g., myfile.pdf or image.png
     document.body.appendChild(a);

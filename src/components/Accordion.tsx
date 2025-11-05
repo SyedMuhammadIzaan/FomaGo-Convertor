@@ -7,7 +7,7 @@ import {
 } from "../components/ui/accordion"
 const AccordionComp = () => {
     return (
-        <div className="w-full border-2 border-green-300 p-5">
+        <div className="w-full mb-4.5 p-5">
             <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is Formago?</AccordionTrigger>

@@ -2,13 +2,13 @@ import BackgroundRemoverImage from '../../assets/Before&AfterConvertImage.png'
 import ButtonComp from '../Button'
 const UseOfBackgroundRemover = () => {
     return (
-        <div className="backgroundRemoverSection border-2 p-4">
+        <div className="backgroundRemoverSection mt-4.5 p-4">
             <div className="backgroundremoverInnerRowContainer">
                 <h2 className="text-3xl text-center uppercase">Use of Background Remover</h2>
-                <p className="text-md text-center">
+                <p className="text-md text-center border-2">
                     The Background Remover tool is designed to help users easily remove backgrounds from images, making them more versatile for various applications. Here are some common uses of the Background Remover:
                 </p>
-                <div className="backgroundremoverGridContainer w-full flex flex-col p-4 md:flex-row lg:flex-row xl:flex-row">
+                <div className="backgroundremoverGridContainer mt-3 w-full flex flex-col p-4 md:flex-row lg:flex-row xl:flex-row">
                     <div className="colContainer w-full md:w-1/2 lg:w-1/2">
                         <img className="w-full h-full" src={BackgroundRemoverImage} alt="" />
                     </div>

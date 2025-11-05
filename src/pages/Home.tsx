@@ -10,7 +10,7 @@ const Home = () => {
   const [format, setFormat] = useState<string>("");
   const [convertedFiles, setConvertedFiles] = useState<UploadFile[]>([]);
   const handleChange = (value: string) => {
-    console.log(`Selected conversion type: ${value}`);
+    // console.log(`Selected conversion type: ${value}`);
     setFormat(value);
   };
 
@@ -35,7 +35,7 @@ const Home = () => {
 
   }
   return (
-    <div className="convert-container border-2 h-96 min-h-96">
+    <div className="convert-container h-96 min-h-96">
       <div className="col-container h-full p-4 flex flex-col justify-center items-center gap-3.5">
         <div className="main-heading-wrapper w-2xs lg:w-1/2">
           <h3 className="text-center text-2xl md:text:4xl lg:text-4xl uppercase">
@@ -104,13 +104,13 @@ const Home = () => {
               </ul>
             )
               : (<p className="text-gray-500 text-sm">
-                No files uploaded yet.
+                {/* No files uploaded yet. */}
               </p>
               )
           }
         </div>
         {/* Step 4: Show uploaded files after convert */}
-        <div className="converted-files mt-3">
+        {/* <div className="converted-files mt-3">
           {convertedFiles.length > 0 ? (
             <ul>
               {convertedFiles.map((file) => (
@@ -122,7 +122,7 @@ const Home = () => {
               No files converted yet.
             </p>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
