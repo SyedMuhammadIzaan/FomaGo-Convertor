@@ -35,7 +35,7 @@ const Home = () => {
 
   }
   return (
-    <div className="convert-container h-full min-h-96">
+    <div className="convert-container h-screen min-h-96">
       <div className="col-container h-full p-4 flex flex-col justify-center items-center gap-3.5">
         <div className="main-heading-wrapper w-2xs lg:w-1/2">
           <h3 className="text-center text-2xl md:text:4xl lg:text-4xl uppercase">
