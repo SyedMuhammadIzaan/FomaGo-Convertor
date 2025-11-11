@@ -5,13 +5,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "./ui/navigation-menu";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Menu } from "lucide-react"
+} from "./ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+// import { Menu } from "lucide-react"
 import { Link } from "react-router-dom"
 import ButtonComp from "./Button"
 
@@ -38,23 +39,23 @@ const Navbar = () => {
   return (
     <div className="navbar-container border-b bg-white shadow-sm">
       <div className="inner-content flex justify-between items-center px-4 py-3">
-        
+
         {/* 📱 Mobile Hamburger (hidden on desktop) */}
         <div className="flex justify-between md:hidden">
           <Sheet>
-            <SheetTrigger asChild>
-              <button aria-label="Menu">
-                <Menu className="h-7 w-7" />
-              </button>
-            </SheetTrigger>
-            <SheetContent side="left" className="p-4">
+            <SheetTrigger className="p-2">☰</SheetTrigger>
+            <SheetContent className="p-4 fixed inset-y-0 left-0 w-[280px] sm:max-w-[300px] bg-white shadow-lg">
+              <VisuallyHidden>
+                <h2>Mobile Navigation Menu</h2> {/* 👈 Accessible title */}
+              </VisuallyHidden>
               <nav className="flex flex-col gap-4">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
-                
+
                 {/* ✅ Convert Dropdown in Mobile Menu */}
                 <div>
                   <p className="font-semibold mb-2">Convert</p>
+
                   <div>
                     <p className="font-medium">📄 Document Conversion</p>
                     <ul className="ml-2 mt-1 flex flex-col gap-1">

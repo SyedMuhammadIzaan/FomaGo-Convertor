@@ -9,6 +9,7 @@ const Home = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [format, setFormat] = useState<string>("");
   const [convertedFiles, setConvertedFiles] = useState<UploadFile[]>([]);
+
   const handleChange = (value: string) => {
     // console.log(`Selected conversion type: ${value}`);
     setFormat(value);
@@ -109,6 +110,9 @@ const Home = () => {
               )
           }
         </div>
+        {
+          convertedFiles.length > 0 ? <></> : null
+        }
         {/* Step 4: Show uploaded files after convert */}
         {/* <div className="converted-files mt-3">
           {convertedFiles.length > 0 ? (
