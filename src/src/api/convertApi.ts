@@ -6,7 +6,7 @@ export const convertFile = async (file: File, targetFormat: string) => {
   formData.append("target_format", targetFormat);
 
   try {
-    const response = await axios.post("http://127.0.0.1:8000/convert/", formData, {
+    const response = await axios.post("https://formagobackend.vercel.app/convert/", formData, {
       responseType: "blob", // 👈 this is essential
     });
     // console.log("Req Header",response.headers["content-disposition"])
