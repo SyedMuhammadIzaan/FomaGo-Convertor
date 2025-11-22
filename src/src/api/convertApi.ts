@@ -6,7 +6,7 @@ export const convertFile = async (file: File, targetFormat: string) => {
   formData.append("target_format", targetFormat);
 
   try {
-    const response = await axios.post("https://formagobackend.vercel.app/convert/", formData, {
+    const response = await axios.post("https://docuflex-backend-production.up.railway.app/convert/", formData, {
       responseType: "blob", // 👈 this is essential
     });
     // console.log("Req Header",response.headers["content-disposition"])
